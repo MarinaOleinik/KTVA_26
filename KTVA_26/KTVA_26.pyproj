@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b61717a5-62e1-4480-8029-091c96c9e0cc</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>KTVA_26.py</StartupFile>
+    <StartupFile>Too_2_1.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,6 +22,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="KTVA_26.py" />
+    <Compile Include="Too_1_1.py" />
+    <Compile Include="Too_2_1.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
