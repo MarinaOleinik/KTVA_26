@@ -99,3 +99,56 @@ elif sugu == "n" or sugu == "naine":
     # Siin saad lisada naiste jaoks kehtivad piirid ja tingimused
 else:
     print("Palun sisesta kehtiv sugu (M/N).")
+
+
+# 8. Poes
+# Küsi kasutajalt iga toote kohta eraldi, kas ta soovib seda osta: 
+#     piim, sai, leib ja vähemalt kaks toodet veel.
+# Toodete hinnad loo juhuslikult moodulist random, näiteks round(random.uniform(0.5, 3), 2).
+# Kui kasutaja soovib toodet osta, küsi kogus. Kontrolli, et kogus on täisarv (isdigit()).
+# Lõpus kuva tšekk: iga ostetud toote nimi, kogus, hind ja summa ning kõige all kogusumma.
+# ilma tsüklita ja listita
+from random import *
+summa=0
+arve="Toode   Kogus   Hind    Kokku\n"
+valik=input("Kas soovid osta piima? (jah/ei): ")
+if valik.lower()=="jah":
+    kogus=input("Kui palju piima soovid osta (täisarv): ")
+    if kogus.isdigit():
+        kogus=int(kogus)
+        piim_hind=round(uniform(0.5, 3), 2)
+        print(f"Piima hind on {piim_hind} eurot.")
+        summa+=kogus*piim_hind
+        print(f"Piima kogusumma on {kogus*piim_hind} eurot.")
+        arve+=f"piim   {kogus}   {piim_hind}€    {kogus*piim_hind}€\n"
+else:
+    print("Selge: Piima ei taha")
+print(f"Kogusumma on:{round(summa,2)} eurot.")
+
+
+valik=input("Kas soovid osta sai? (jah/ei): ")
+if valik.lower()=="jah":
+    kogus=input("Kui palju sai soovid osta (täisarv): ")
+    if kogus.isdigit():
+        kogus=int(kogus)
+        sai_hind=round(uniform(0.5, 3), 2)
+        print(f"Sai hind on {sai_hind} eurot.")
+        summa+=kogus*sai_hind
+        print(f"Sai kogusumma on {round(kogus*sai_hind,2)} eurot.")
+        arve+=f"sai   {kogus}   {round(sai_hind,2)}€    {round(kogus*sai_hind,2)}€\n"
+print(f"Kogusumma on:{round(summa,2)} eurot.")
+valik=input("Kas soovid osta leiba? (jah/ei): ")
+if valik.lower()=="jah":
+    kogus=input("Kui palju leiba soovid osta (täisarv): ")
+    if kogus.isdigit():
+        kogus=int(kogus)
+        leib_hind=round(uniform(0.5, 3), 2)
+        print(f"Leiva hind on {round(leib_hind,2)} eurot.")
+        summa+=kogus*leib_hind
+        print(f"Leiva kogusumma on {round(kogus*leib_hind,2)} eurot.")
+        arve+=f"leib   {kogus}   {round(leib_hind,2)}€    {round(kogus*leib_hind,2)}€\n"
+print(f"Kogusumma on:{round(summa,2)} eurot.")
+# Lõpus kuva tšekk: iga ostetud toote nimi, kogus, hind ja summa ning kõige all kogusumma.
+print("Arve NR: 0000")
+print("--------------")
+print(arve)
